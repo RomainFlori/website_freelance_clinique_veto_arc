@@ -7,7 +7,7 @@
         
         <div class="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-2xl transition-all duration-1000 group-hover:shadow-emerald-500/10 group-hover:scale-[1.01]">
           <img 
-            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop" 
+            src="/public/cliniqueveto1.png" 
             alt="Contactez-nous"
             class="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
           />
@@ -37,7 +37,7 @@
               </svg>
             </div>
             <div>
-              <h3 class="text-xs font-bold uppercase tracking-widest text-emerald-700/70 mb-1">Notre Bureau</h3>
+              <h3 class="text-xs font-bold uppercase tracking-widest text-emerald-700/70 mb-1">Notre agence</h3>
               <p class="text-slate-800 font-semibold leading-relaxed">
                 123 Avenue du Code<br />
                 75000 Paris, France

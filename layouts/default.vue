@@ -8,9 +8,11 @@ const isMenuOpen = ref(false)
       <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
         <!-- <div class="font-bold text-emerald-600 text-xl">🐾 VetoPastel</div> -->
 
-        <div>
-
-          <NuxtImg class="block h-full w-full object-cover" src="/logo.png" sizes="lg:150px" format="webp" />
+        <div class="flex">
+          <div class="">
+            <NuxtImg class="block h-full w-full object-cover" src="/logo.png" sizes="lg:150px" format="webp" />
+          </div>
+          <!-- <div class="font-bold text-emerald-600 text-xl">Clinique vétérinaire de l'arc</div> -->
         </div>
 
         
@@ -63,4 +65,6 @@ const isMenuOpen = ref(false)
 
     <main><slot /></main>
   </div>
+
+  <Footer />
 </template>

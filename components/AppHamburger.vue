@@ -1,14 +1,14 @@
 <script setup>
-defineProps({
-  // Permet de contrôler l'état depuis le parent (ex: la Navbar)
-  isOpen: {
-    type: Boolean,
-    default: false
-  }
-})
+  defineProps({
+    // Permet de contrôler l'état depuis le parent (ex: la Navbar)
+    isOpen: {
+      type: Boolean,
+      default: false
+    }
+  })
 
-// On définit l'événement pour que le parent puisse réagir au clic
-defineEmits(['toggle'])
+  // On définit l'événement pour que le parent puisse réagir au clic
+  defineEmits(['toggle'])
 </script>
 
 <template>

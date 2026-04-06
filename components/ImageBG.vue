@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-full min-h-[60vh] md:min-h-[80vh] flex items-center overflow-hidden my-8 shadow-2xl group">
+  <div class="relative w-full min-h-[60vh] md:min-h-[80vh] flex items-center overflow-hidden shadow-2xl group">
     
     <div class="container mx-auto px-6 md:px-12 lg:px-20 z-20 relative">
       <div class="grid md:grid-cols-12 gap-8 items-center">
@@ -11,29 +11,29 @@
           <div class="flex items-center gap-3">
             <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
             <span class="text-sm font-semibold uppercase tracking-widest text-emerald-400">
-              Notre Univers
+              Notre clinique
             </span>
           </div>
 
           <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight">
-            Découvrez <br /> Notre <span class="text-emerald-400">Expertise</span>
+            Clinique <br /> vétérinaire de <span class="text-emerald-400">l'arc</span>
           </h1>
 
           <p class="text-xl md:text-2xl text-slate-200 max-w-xl font-medium leading-relaxed">
-            Une approche innovante pour des résultats exceptionnels. L'excellence au service de vos projets.
+            Clinique vétérinaire à Pourrières
           </p>
 
           <div class="flex flex-wrap items-center gap-5 pt-4">
             <button class="px-8 py-4 bg-emerald-500 text-white rounded-xl font-bold text-lg 
                            shadow-lg shadow-emerald-500/20 
                            transition-all duration-700 hover:bg-emerald-600 hover:shadow-emerald-500/40 hover:-translate-y-1">
-              Commencer
+              Nous contacter
             </button>
-            <button class="px-8 py-4 bg-white/10 text-white rounded-xl font-bold text-lg 
+            <!-- <button class="px-8 py-4 bg-white/10 text-white rounded-xl font-bold text-lg 
                            backdrop-blur-sm border border-white/20
                            transition-all duration-700 hover:bg-white/20 hover:border-white/40 hover:-translate-y-1">
               En savoir plus
-            </button>
+            </button> -->
           </div>
 
         </div>
