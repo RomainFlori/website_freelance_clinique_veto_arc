@@ -20,11 +20,11 @@
         <div class="space-y-3">
           <span class="text-sm font-bold uppercase tracking-widest text-emerald-600">Contact</span>
           <h2 class="text-4xl lg:text-5xl font-extrabold text-slate-950 leading-tight">
-            Venez nous <span class="text-emerald-600">rencontrer</span>
+            Confiez-nous la santé de vos  <span class="text-emerald-600">compagnons</span>
           </h2>
-          <p class="text-lg text-slate-600 max-w-md">
+          <!-- <p class="text-lg text-slate-600 max-w-md">
             Notre équipe est à votre disposition pour toute question ou projet.
-          </p>
+          </p> -->
         </div>
 
         <div class="bg-white/40 backdrop-blur-lg border border-white/20 rounded-3xl shadow-xl p-8 space-y-8 transition-all duration-1000 hover:shadow-emerald-500/5 group/card">
@@ -37,10 +37,10 @@
               </svg>
             </div>
             <div>
-              <h3 class="text-xs font-bold uppercase tracking-widest text-emerald-700/70 mb-1">Notre agence</h3>
+              <h3 class="text-xs font-bold uppercase tracking-widest text-emerald-700/70 mb-1">Notre adresse</h3>
               <p class="text-slate-800 font-semibold leading-relaxed">
-                123 Avenue du Code<br />
-                75000 Paris, France
+                561 Rte de Trets<br />
+                83910 Pourrières, France
               </p>
             </div>
           </div>
@@ -53,8 +53,8 @@
             </div>
             <div>
               <h3 class="text-xs font-bold uppercase tracking-widest text-emerald-700/70 mb-1">Téléphone</h3>
-              <a href="tel:+33123456789" class="text-slate-800 font-semibold hover:text-emerald-500 transition-colors duration-500">
-                +33 (0)1 23 45 67 89
+              <a href="tel:+33494784606" class="text-slate-800 font-semibold hover:text-emerald-500 transition-colors duration-500">
+                0494784606
               </a>
             </div>
           </div>
