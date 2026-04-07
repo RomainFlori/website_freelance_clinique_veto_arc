@@ -5,20 +5,30 @@
 <template>
   <div class="min-h-screen bg-white font-sans text-slate-800">
     <nav class="bg-white sticky top-0 z-50">
-      <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-        <!-- <div class="font-bold text-emerald-600 text-xl">🐾 VetoPastel</div> -->
-
+      <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
         <div class="flex">
-          <div class="">
+          <a href="#">
             <NuxtImg class="block h-full w-full object-cover" src="/logo.png" sizes="lg:150px" format="webp" />
-          </div>
+          </a>
           <!-- <div class="font-bold text-emerald-600 text-xl">Clinique vétérinaire de l'arc</div> -->
+
+          <div class="flex flex-col justify-center py-1">
+            <span class="font-black text-slate-900 leading-none text-lg md:text-xl uppercase tracking-tighter">
+              Clinique vétérinaire
+            </span>
+            <span class="font-bold text-emerald-600 leading-none text-base md:text-lg">
+              de l'arc
+            </span>
+          </div>
+          
         </div>
 
-        
-        <div class="hidden md:flex gap-6">
-          <NuxtLink to="/" class="">Accueil</NuxtLink>
-          <NuxtLink to="/contact" class="">Contact</NuxtLink>
+
+        <div class="hidden md:flex gap-8 items-center">
+          <a href="#" class="nav-link">Accueil</a>
+          <a href="#expertise" class="nav-link">Nos expertises</a>
+          <a href="#quisommesnous" class="nav-link">Qui sommes-nous ?</a>
+          <a href="#contact" class="nav-link">Contact</a>
         </div>
 
 

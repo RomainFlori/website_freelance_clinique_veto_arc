@@ -47,9 +47,12 @@
 
           <div class="flex items-start gap-5 group/item">
             <div class="p-3 bg-emerald-500/10 rounded-xl text-emerald-600 transition-all duration-700 group-hover/item:bg-emerald-500 group-hover/item:text-white group-hover/item:scale-110">
+              <a href="tel:+33494784606" >
               <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
+              </a>
+
             </div>
             <div>
               <h3 class="text-xs font-bold uppercase tracking-widest text-emerald-700/70 mb-1">Téléphone</h3>
@@ -66,15 +69,41 @@
               </svg>
             </div>
             <div class="w-full">
-              <h3 class="text-xs font-bold uppercase tracking-widest text-emerald-700/70 mb-1">Horaires</h3>
-              <div class="space-y-1.5 mt-2">
-                <div class="flex justify-between items-center text-sm">
-                  <span class="text-slate-800 font-semibold">Lundi - Vendredi</span>
-                  <span class="px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full font-bold text-xs">09:00 — 18:00</span>
+              <h3 class="text-xs font-bold uppercase tracking-widest text-emerald-700/70 mb-3">Horaires d'ouverture</h3>
+              
+              <div class="space-y-3 mt-2">
+                <div class="flex justify-between items-start text-sm">
+                  <span class="text-slate-800 font-semibold leading-tight">Lundi, Mardi</span>
+                  <div class="flex flex-col items-end gap-1">
+                    <span class="px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full font-bold text-[11px]">08:30 — 12:00</span>
+                    <span class="px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full font-bold text-[11px]">15:00 — 19:00</span>
+                  </div>
                 </div>
-                <div class="flex justify-between items-center text-sm text-slate-500">
-                  <span class="font-medium">Samedi - Dimanche</span>
-                  <span class="font-bold text-xs uppercase tracking-wider">Fermé</span>
+
+                <div class="flex justify-between items-start text-sm pt-1 border-t border-slate-100">
+                  <span class="text-slate-800 font-semibold mt-1">Mercredi</span>
+                  <div class="flex flex-col items-end gap-1 mt-1">
+                    <span class="px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full font-bold text-[11px]">08:30 — 12:00</span>
+                    <span class="px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full font-bold text-[11px]">15:00 — 18:00</span>
+                  </div>
+                </div>
+
+                <div class="flex justify-between items-start text-sm pt-1 border-t border-slate-100">
+                  <span class="text-slate-800 font-semibold leading-tight">Jeudi, Vendredi</span>
+                  <div class="flex flex-col items-end gap-1">
+                    <span class="px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full font-bold text-[11px]">08:30 — 12:00</span>
+                    <span class="px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full font-bold text-[11px]">15:00 — 19:00</span>
+                  </div>
+                </div>
+
+                <div class="flex justify-between items-center text-sm pt-1 border-t border-slate-100">
+                  <span class="text-slate-800 font-semibold">Samedi</span>
+                  <span class="px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full font-bold text-[11px]">08:30 — 12:00</span>
+                </div>
+
+                <div class="flex justify-between items-center text-sm text-slate-400 pt-1 border-t border-slate-50">
+                  <span class="font-medium">Dimanche</span>
+                  <span class="font-bold text-[10px] uppercase tracking-wider bg-slate-50 px-3 py-1 rounded-full">Fermé</span>
                 </div>
               </div>
             </div>

@@ -1,9 +1,10 @@
+
 <template>
   <ImageBG />
 
   <div class="container md:py-24 mx-auto px-4 py-16">
 
-    <section class="py-20 px-4 md:px-10 bg-gradient-to-b from-white to-emerald-50/30">
+    <section class="py-20 px-4 md:px-10 bg-gradient-to-b from-white to-emerald-50/30" id="expertise">
       <div class="container mx-auto">
         
         <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
@@ -44,9 +45,9 @@
       </div>
     </section>
 
+    <NotreEquipe/>
 
-  <FormContact id="contact" />
-
+    <FormContact id="contact" />
 
     <section class="relative w-full h-[400px] md:h-[550px] overflow-hidden group ">
       
@@ -70,6 +71,43 @@
     </section>
     <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8186.021331875723!2d5.732843837547963!3d43.498255010799824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c982aa83caf97b%3A0xe928995ff52a2c8d!2sClinique%20V%C3%A9t%C3%A9rinaire%20de%20l&#39;Arc%20SELARL!5e0!3m2!1sfr!2sfr!4v1775471445524!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>  </div> -->
   </div>
+
+
+  <section class="relative -mt-16 z-20 pb-20 px-4 md:px-10 overflow-hidden group">
+    
+    <div class="container mx-auto">
+      <div class="grid md:grid-cols-12 items-center gap-12">
+        
+        <div class="md:col-span-8 relative">
+          <div class="absolute -inset-10 bg-emerald-500/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
+
+          <div class="relative aspect-[16/10] overflow-hidden rounded-[2.5rem] md:rounded-[3.5rem] shadow-2xl border-4 border-white transition-all duration-1000 group-hover:shadow-emerald-500/10 group-hover:scale-[1.01]">
+            
+            <img 
+              src="/public/facade.jpg" 
+              alt="Façade moderne de la clinique"
+              class="w-full h-full object-cover transition-transform duration-[1500ms] ease-out group-hover:scale-105"
+            />
+
+            <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/40 to-transparent"></div>
+          </div>
+        </div>
+
+        <div class="md:col-span-4 space-y-3 opacity-80 group-hover:opacity-100 transition-opacity duration-700">
+          <div class="flex items-center gap-2">
+            <span class="w-1 h-1 bg-emerald-500 rounded-full animate-pulse"></span>
+            <span class="text-xs font-bold uppercase tracking-widest text-emerald-600">
+              Notre facade
+            </span>
+          </div>
+          <p class="text-slate-500 text-sm leading-relaxed font-medium">
+            Parking gratuit devant la clinique.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
   
 
 
