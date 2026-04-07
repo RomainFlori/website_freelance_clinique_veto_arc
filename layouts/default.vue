@@ -1,5 +1,5 @@
 <script setup>
-const isMenuOpen = ref(false)
+  const isMenuOpen = ref(false)
 </script>
 
 <template>

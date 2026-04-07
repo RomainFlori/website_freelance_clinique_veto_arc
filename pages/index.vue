@@ -1,12 +1,7 @@
 <template>
-  <div class="">
-        <ImageBG />
-  </div>
-
-  <FormContact />
+  <ImageBG />
 
   <div class="container md:py-24 mx-auto px-4 py-16">
-
 
     <section class="py-20 px-4 md:px-10 bg-gradient-to-b from-white to-emerald-50/30">
       <div class="container mx-auto">
@@ -49,6 +44,10 @@
       </div>
     </section>
 
+
+  <FormContact id="contact" />
+
+
     <section class="relative w-full h-[400px] md:h-[550px] overflow-hidden group ">
       
       <iframe 
@@ -71,6 +70,7 @@
     </section>
     <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8186.021331875723!2d5.732843837547963!3d43.498255010799824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c982aa83caf97b%3A0xe928995ff52a2c8d!2sClinique%20V%C3%A9t%C3%A9rinaire%20de%20l&#39;Arc%20SELARL!5e0!3m2!1sfr!2sfr!4v1775471445524!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>  </div> -->
   </div>
+  
 
 
 </template>

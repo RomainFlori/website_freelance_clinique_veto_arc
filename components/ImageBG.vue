@@ -24,16 +24,20 @@
           </p>
 
           <div class="flex flex-wrap items-center gap-5 pt-4">
-            <button class="px-8 py-4 bg-emerald-500 text-white rounded-xl font-bold text-lg 
-                           shadow-lg shadow-emerald-500/20 
-                           transition-all duration-700 hover:bg-emerald-600 hover:shadow-emerald-500/40 hover:-translate-y-1">
-              Nous contacter
-            </button>
-            <!-- <button class="px-8 py-4 bg-white/10 text-white rounded-xl font-bold text-lg 
-                           backdrop-blur-sm border border-white/20
-                           transition-all duration-700 hover:bg-white/20 hover:border-white/40 hover:-translate-y-1">
-              En savoir plus
-            </button> -->
+            <a href="#contact">
+              <button class="px-8 py-4 bg-emerald-500 text-white rounded-xl font-bold text-lg 
+                            shadow-lg shadow-emerald-500/20 
+                            transition-all duration-700 hover:bg-emerald-600 hover:shadow-emerald-500/40 hover:-translate-y-1">
+                Nous contacter
+              </button>
+            </a>
+            <a href="#expertise">
+              <button class="px-8 py-4 bg-white/10 text-white rounded-xl font-bold text-lg 
+                            backdrop-blur-sm border border-white/20
+                            transition-all duration-700 hover:bg-white/20 hover:border-white/40 hover:-translate-y-1">
+                Nos expertises
+              </button>
+            </a>
           </div>
 
         </div>
