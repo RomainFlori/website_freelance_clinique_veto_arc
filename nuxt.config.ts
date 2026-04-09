@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss', '@nuxt/image', '@nuxtjs/sitemap'],
   css: ['~/assets/css/main.css'],
   ssr: true,
+  
 
   site: {
       url: 'https://www.clinique-veterinaire-arc.fr', // Remplace par ton futur nom de domaine
@@ -15,5 +16,7 @@ export default defineNuxtConfig({
 
   sitemap: {
       exclude: ['/admin/**'],
-    }
+    },
+
+
 })
