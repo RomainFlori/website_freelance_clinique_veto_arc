@@ -3,11 +3,11 @@
     <aside class="w-72 bg-emerald-900 text-white flex flex-col fixed h-full shadow-2xl">
       <div class="p-8">
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 bg-emerald-400 rounded-xl flex items-center justify-center shadow-lg shadow-emerald-400/20">
-            <span class="text-emerald-900 font-black">ARC</span>
+          <div class="w-15 h-10 bg-emerald-400 rounded-xl flex items-center justify-center">
+            <NuxtImg class="block h-full w-full object-cover" src="/logo.png" sizes="lg:150px" format="webp" />
           </div>
           <div>
-            <h2 class="font-black italic text-xl tracking-tight">CLINIQUE <span class="text-emerald-400">ARC</span></h2>
+            <h2 class="font-black italic text-xl tracking-tight">CLINIQUE DE<span class="text-emerald-400"> L'ARC</span></h2>
             <p class="text-[10px] uppercase tracking-[0.2em] text-emerald-300/60 font-bold">Administration</p>
           </div>
         </div>

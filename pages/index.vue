@@ -4,7 +4,7 @@
 
   <div class="container md:py-24 mx-auto px-4 py-16">
 
-    <section class="py-20 px-4 md:px-10 bg-gradient-to-b from-white to-emerald-50/30" id="expertise">
+    <section class="py-20 px-4 md:px-10 bg-gradient-to-b from-white to-emerald-50/30 rounded-3xl" id="expertise">
       <div class="container mx-auto">
         
         <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">

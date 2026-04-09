@@ -101,7 +101,6 @@ const handleLogout = async () => {
     <main class="flex-1 p-6 md:p-12">
       <header class="flex justify-between items-center mb-10">
         <h1 class="text-3xl font-bold text-slate-800">Rédiger un article</h1>
-        <div class="text-sm text-slate-500 italic">{{ user?.email }}</div>
       </header>
 
       <div class="max-w-3xl bg-white p-8 rounded-[2rem] shadow-sm border border-slate-200">
