@@ -3,11 +3,11 @@
     <aside class="w-72 bg-emerald-900 text-white flex flex-col fixed h-full shadow-2xl">
       <div class="p-8">
         <div class="flex items-center gap-3">
-          <div class="w-15 h-10 bg-emerald-400 rounded-xl flex items-center justify-center">
-            <NuxtImg class="block h-full w-full object-cover" src="/logo.png" sizes="lg:150px" format="webp" />
+          <div class="w-10 h-10 bg-emerald-400 rounded-xl flex items-center justify-center shadow-lg shadow-emerald-400/20">
+            <span class="text-emerald-900 font-black">ARC</span>
           </div>
           <div>
-            <h2 class="font-black italic text-xl tracking-tight">CLINIQUE DE<span class="text-emerald-400"> L'ARC</span></h2>
+            <h2 class="font-black italic text-xl tracking-tight">CLINIQUE <span class="text-emerald-400">ARC</span></h2>
             <p class="text-[10px] uppercase tracking-[0.2em] text-emerald-300/60 font-bold">Administration</p>
           </div>
         </div>
@@ -31,15 +31,24 @@
           <span class="text-xl">📚</span>
           <span class="font-bold">Gérer les articles</span>
         </NuxtLink>
+
+        <NuxtLink 
+          to="/admin/annonce" 
+          class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all hover:bg-red-800/40 text-red-200 group border border-transparent"
+          active-class="bg-red-600/20 !text-red-400 border-red-500/30 shadow-inner"
+        >
+          <span class="text-xl">⚠️</span>
+          <span class="font-bold">Annonce Urgente</span>
+        </NuxtLink>
       </nav>
 
       <div class="p-6 border-t border-emerald-800/50 bg-emerald-950/30">
         <div class="flex items-center gap-3 mb-6 px-2">
-          <div class="w-8 h-8 rounded-full bg-emerald-700 flex items-center justify-center text-xs border border-emerald-500/30">
+          <div class="w-8 h-8 rounded-full bg-emerald-700 flex items-center justify-center text-xs border border-emerald-500/30 font-bold">
             {{ userEmail?.charAt(0).toUpperCase() || 'A' }}
           </div>
           <div class="truncate">
-            <p class="text-[10px] text-emerald-400 font-bold uppercase tracking-wider">Connecté en tant que</p>
+            <p class="text-[10px] text-emerald-400 font-bold uppercase tracking-wider">Admin</p>
             <p class="text-xs truncate text-emerald-100 font-medium">{{ userEmail }}</p>
           </div>
         </div>
@@ -69,7 +78,6 @@ import { signOut } from 'firebase/auth'
 const userEmail = ref('')
 
 onMounted(() => {
-  // On récupère l'email du current user
   auth.onAuthStateChanged((user) => {
     if (user) {
       userEmail.value = user.email

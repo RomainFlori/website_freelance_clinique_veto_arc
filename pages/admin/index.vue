@@ -40,7 +40,7 @@ const handleFileChange = (e) => {
 // Fonction pour publier l'article
 const publishArticle = async () => {
   // On vérifie aussi l'image ici
-  if (!title.value || !content.value || !imageFile.value) {
+  if (!title.value || !content.value) {
     statusMsg.value = "⚠️ Veuillez remplir tous les champs et choisir une image."
     return
   }
@@ -110,19 +110,16 @@ const handleLogout = async () => {
             <input 
               v-model="title"
               type="text" 
-              placeholder="Ex: Les vaccins pour chatons..."
+              placeholder="Ex: Les chatons c'est trop mignion hihi..."
               class="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-emerald-500 outline-none transition-all"
             />
           </div>
 
           <div>
-            <label class="block text-sm font-bold text-slate-700 mb-2 pl-1">Contenu de l'article</label>
-            <textarea 
-              v-model="content"
-              rows="10"
-              placeholder="Écrivez votre texte ici..."
-              class="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-emerald-500 outline-none transition-all"
-            ></textarea>
+              <label class="block text-sm font-bold text-slate-700 mb-2 pl-1">Contenu de l'article</label>
+            <div>
+            <TiptapEditor v-model="content" />
+          </div>
           </div>
 
           <div>

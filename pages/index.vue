@@ -1,10 +1,66 @@
+<script setup>
+import { db } from '~/lib/firebase'
+import { doc, onSnapshot } from 'firebase/firestore'
+
+  const services = [
+    { title: "Médecine générale", description: "Consultations de prévention, vaccinations et suivis de santé réguliers." },
+    { title: "Radiologie", description: "Imagerie médicale haute définition pour un diagnostic précis et rapide." },
+    { title: "Échographie", description: "Examens non-invasifs pour l'exploration abdominale." },
+    { title: "Analyses sanguines", description: "Laboratoire sur place pour des résultats immédiats lors des urgences." },
+    { title: "Chirurgie", description: "Bloc opératoire équipé pour les interventions de convenance ou spécialisées." },
+    { title: "Études comportementales", description: "Évaluation et rééducation pour les troubles du comportement et chiens mordeurs." },
+    { title: "Ostéopathie", description: "Approche manuelle pour soulager les douleurs chroniques et troubles moteurs." }
+  ]
+
+const annonceData = ref(null)
+
+onMounted(() => {
+  onSnapshot(doc(db, "annonces", "alerte_principale"), (doc) => {
+    if (doc.exists()) {
+      annonceData.value = doc.data()
+    }
+  })
+})
+
+// Logique de vérification des dates
+const isVisible = computed(() => {
+  if (!annonceData.value || !annonceData.value.isActive) return false
+  
+  const today = new Date().toISOString().split('T')[0] // Format YYYY-MM-DD
+  const start = annonceData.value.startDate
+  const end = annonceData.value.endDate
+
+  // Si aucune date n'est saisie, on considère qu'elle est toujours visible si active
+  if (!start && !end) return true
+
+  // Vérification de la période
+  const afterStart = start ? today >= start : true
+  const beforeEnd = end ? today <= end : true
+
+  return afterStart && beforeEnd
+})
+</script>
+
 
 <template>
-  <ImageBG />
+
+  <div>
+    <Transition name="fade">
+      <div v-if="isVisible" class="bg-red-600 text-white py-6 px-4 shadow-xl relative z-40">
+        <div class="max-w-6xl mx-auto flex items-center justify-center gap-4 text-center">
+          <span class="text-2xl hidden md:inline">⚠️</span>
+          <p class="text-xl font-black uppercase tracking-wide">{{ annonceData.title }}</p>
+          <span class="text-2xl hidden md:inline">⚠️</span>
+        </div>
+      </div>
+    </Transition>
+    </div>
+
+  <ImageBG id="acceuil"/>
 
   <div class="container md:py-24 mx-auto px-4 py-16">
 
-    <section class="py-20 px-4 md:px-10 bg-gradient-to-b from-white to-emerald-50/30 rounded-3xl" id="expertise">
+    <section class="py-20 px-4 md:px-10 bg-gradient-to-b from-white rounded-3xl" id="expertise">
       <div class="container mx-auto">
         
         <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
@@ -45,6 +101,62 @@
       </div>
     </section>
 
+    <section id="notre-clinique" class="py-24 bg-white overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col lg:flex-row items-center gap-16">
+          
+          <div class="flex-1 relative">
+            <div class="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
+              <img 
+                src="/public/facade.jpg" 
+                alt="Clinique Vétérinaire de l'Arc" 
+                class="w-full h-[500px] object-cover"
+              />
+            </div>
+            <div class="absolute  -bottom-6 -left-6 w-64 h-64 bg-emerald-100 rounded-full -z-10 blur-3xl opacity-60"></div>
+            <div class="absolute h-24 w-24 -top-10 -right-10 p-8 bg-emerald-600 rounded-[2rem] shadow-xl hidden lg:block">
+            </div>
+          </div>
+
+          <div class="flex-1 space-y-8">
+            <div class="space-y-4">
+              <span class="text-emerald-600 font-bold uppercase tracking-[0.3em] text-sm">Qui sommes-nous ?</span>
+              <h2 class="text-4xl md:text-5xl font-black text-slate-900 leading-tight">
+                Une équipe passionnée au service de <span class="text-emerald-600 italic">vos compagnons.</span>
+              </h2>
+            </div>
+
+            <p class="text-lg text-slate-600 leading-relaxed">
+              Située à Pourrières, au pied de la Sainte-Victoire, la <strong>Clinique Vétérinaire de l'Arc</strong> fondée il y a plus de 20 ans par le Dr. Myriam Cantrelle.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-2xl bg-emerald-50 flex items-center justify-center shrink-0">
+                  <Icon name="heroicons:heart-solid" class="text-emerald-600 text-2xl" />
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-800">Où se stationner ?</h4>
+                  <p class="text-sm text-slate-500 text-balance">Parking gratuit devant la clinique.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-6">
+              <NuxtLink 
+                to="/#equipe" 
+                class="inline-flex items-center gap-3 px-8 py-4 bg-slate-900 text-white rounded-2xl font-bold hover:bg-emerald-600 transition-all hover:shadow-xl hover:shadow-emerald-200 active:scale-95"
+              >
+                Découvrez notre equipe
+                <Icon name="heroicons:arrow-right" class="text-xl" />
+              </NuxtLink>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <NotreEquipe/>
 
     <FormContact id="contact" />
@@ -69,11 +181,10 @@
       </div>
   
     </section>
-    <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8186.021331875723!2d5.732843837547963!3d43.498255010799824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c982aa83caf97b%3A0xe928995ff52a2c8d!2sClinique%20V%C3%A9t%C3%A9rinaire%20de%20l&#39;Arc%20SELARL!5e0!3m2!1sfr!2sfr!4v1775471445524!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>  </div> -->
   </div>
 
 
-  <section class="relative -mt-16 z-20 pb-20 px-4 md:px-10 overflow-hidden group">
+  <!-- <section class="relative -mt-16 z-20 pb-20 px-4 md:px-10 overflow-hidden group">
     
     <div class="container mx-auto">
       <div class="grid md:grid-cols-12 items-center gap-12">
@@ -107,20 +218,13 @@
 
       </div>
     </div>
-  </section>
+  </section> -->
   
 
 
 </template>
 
-<script setup>
-  const services = [
-    { title: "Médecine générale", description: "Consultations de prévention, vaccinations et suivis de santé réguliers." },
-    { title: "Radiologie", description: "Imagerie médicale haute définition pour un diagnostic précis et rapide." },
-    { title: "Échographie", description: "Examens non-invasifs pour l'exploration abdominale et cardiaque." },
-    { title: "Analyses sanguines", description: "Laboratoire sur place pour des résultats immédiats lors des urgences." },
-    { title: "Chirurgie", description: "Bloc opératoire équipé pour les interventions de convenance ou spécialisées." },
-    { title: "Études comportementales", description: "Évaluation et rééducation pour les troubles du comportement et chiens mordeurs." },
-    { title: "Ostéopathie", description: "Approche manuelle pour soulager les douleurs chroniques et troubles moteurs." }
-  ]
-</script>
+<style scoped>
+.fade-enter-active, .fade-leave-active { transition: all 0.5s ease; }
+.fade-enter-from, .fade-leave-to { opacity: 0; transform: translateY(-100%); }
+</style>

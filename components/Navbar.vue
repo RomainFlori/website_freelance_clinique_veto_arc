@@ -24,11 +24,32 @@
 
 
         <div class="hidden md:flex gap-8 items-center">
-          <a href="#" class="nav-link">Accueil</a>
-          <a href="#expertise" class="nav-link">Nos expertises</a>
-          <a href="#quisommesnous" class="nav-link">Qui sommes-nous ?</a>
-          <a href="/blog" class="nav-link">Notre blog</a>
-          <a href="#contact" class="nav-link">Contact</a>
+        <NuxtLink 
+            to="/#acceuil" 
+            class="hover:text-emerald-600 transition-colors cursor-pointer nav-link">
+            Accueil
+        </NuxtLink>
+          <NuxtLink 
+            to="/#expertise" 
+            class="hover:text-emerald-600 transition-colors cursor-pointer nav-link"
+            >
+            Expertise
+        </NuxtLink>
+        <NuxtLink 
+            to="/#quisommesnous" 
+            class="hover:text-emerald-600 transition-colors cursor-pointer nav-link">
+            Qui sommes-nous ?
+        </NuxtLink>
+        <NuxtLink 
+            to="/blog" 
+            class="hover:text-emerald-600 transition-colors cursor-pointer nav-link">
+            Notre blog
+        </NuxtLink>
+        <NuxtLink 
+            to="/#contact" 
+            class="hover:text-emerald-600 transition-colors cursor-pointer nav-link">
+            Contact
+        </NuxtLink>
         </div>
 
 
@@ -58,8 +79,19 @@
                 <div class="h-5 w-1 bg-emerald-500 rounded-full scale-y-0 opacity-0 group-[.router-link-active]:scale-y-100 group-[.router-link-active]:opacity-100 transition-all duration-700"></div>
               </NuxtLink>
 
+              
+              <NuxtLink
+                to="/blog" 
+                class="nav-link group flex items-center justify-between p-4 rounded-2xl transition-all duration-500 hover:bg-emerald-50/50"
+              >
+                <span class="text-slate-600 font-medium group-[.router-link-active]:text-emerald-700 transition-colors">
+                  Notre blog
+                </span>
+                <div class="h-5 w-1 bg-emerald-500 rounded-full scale-y-0 opacity-0 group-[.router-link-active]:scale-y-100 group-[.router-link-active]:opacity-100 transition-all duration-700"></div>
+              </NuxtLink>
+
               <NuxtLink 
-                to="/contact" 
+                to="/#contact" 
                 class="nav-link group flex items-center justify-between p-4 rounded-2xl transition-all duration-500 hover:bg-emerald-50/50"
               >
                 <span class="text-slate-600 font-medium group-[.router-link-active]:text-emerald-700 transition-colors">

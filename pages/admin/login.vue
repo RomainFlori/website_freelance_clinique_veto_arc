@@ -37,7 +37,7 @@ const handleLogin = async () => {
     <div class="w-full max-w-md bg-white p-8 rounded-[2.5rem] shadow-xl border border-emerald-100">
       
       <div class="text-center mb-8">
-        <h1 class="text-2xl font-black text-emerald-800 italic">Espace Admin</h1>
+        <h1 class="text-2xl font-black text-emerald-800 italic">Espace Admin - Clinique vétérinaire de l'arc</h1>
         <p class="text-slate-500 text-sm">Connectez-vous pour gérer le blog</p>
       </div>
 
