@@ -26,7 +26,7 @@
             </div>
           </div>
           <p class="text-slate-600 leading-relaxed max-w-sm mx-auto md:mx-0 text-base md:text-lg">
-            Alliant technologies de pointe et regard humain, notre clinique offre un diagnostic de haute précision pour assurer la sérénité et la santé de vos compagnons.
+            Alliant technologies de pointe et regard humain, notre clinique offre un diagnostic de haute précision pour assurer la sérénité et la santé de vos compagnons, dans le respect du bien être physique et psychologique de votre animal.
           </p>
           <!-- <div class="flex justify-center md:justify-start gap-4">
             <a v-for="i in 3" :key="i" href="#" class="w-11 h-11 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 transition-all duration-700 hover:border-emerald-500 hover:text-emerald-500 hover:-translate-y-2 hover:bg-emerald-50">

@@ -20,7 +20,7 @@
           </h1>
 
           <p class="text-xl md:text-2xl text-slate-200 max-w-xl font-medium leading-relaxed">
-            Clinique vétérinaire à Pourrières
+            Clinique située à Pourrières
           </p>
 
           <div class="flex flex-wrap items-center gap-5 pt-4">

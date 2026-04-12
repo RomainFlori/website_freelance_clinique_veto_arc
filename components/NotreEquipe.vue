@@ -66,13 +66,13 @@
         name: "Aurélia", 
         role: "ASV", 
         image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=400&auto=format&fit=crop",
-        bio: ""
+        bio: "Assistante vétérinaire confirmée."
     },
     { 
         name: "Emilie", 
         role: "ASV", 
         image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop",
-        bio: ""
+        bio: "Assistante vétérinaire."
     }
     ]
 </script>

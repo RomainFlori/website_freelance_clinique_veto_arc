@@ -5,11 +5,11 @@ import { doc, onSnapshot } from 'firebase/firestore'
   const services = [
     { title: "Médecine générale", description: "Consultations de prévention, vaccinations et suivis de santé réguliers." },
     { title: "Radiologie", description: "Imagerie médicale haute définition pour un diagnostic précis et rapide." },
-    { title: "Échographie", description: "Examens non-invasifs pour l'exploration abdominale." },
-    { title: "Analyses sanguines", description: "Laboratoire sur place pour des résultats immédiats lors des urgences." },
+    { title: "Échographie", description: "Examens non-invasifs pour l'exploration abdominale et thoracique." },
+    { title: "Analyses sanguines", description: "Laboratoire sur place pour des résultats immédiats lors des urgences ou de la consultation." },
     { title: "Chirurgie", description: "Bloc opératoire équipé pour les interventions de convenance ou spécialisées." },
     { title: "Études comportementales", description: "Évaluation et rééducation pour les troubles du comportement et chiens mordeurs." },
-    { title: "Ostéopathie", description: "Approche manuelle pour soulager les douleurs chroniques et troubles moteurs." }
+    { title: "Ostéopathie", description: "Approche manuelle douce pour soulager des douleurs chroniques et/ou troubles moteurs." }
   ]
 
 const annonceData = ref(null)
@@ -48,9 +48,7 @@ const isVisible = computed(() => {
     <Transition name="fade">
       <div v-if="isVisible" class="bg-red-600 text-white py-6 px-4 shadow-xl relative z-40">
         <div class="max-w-6xl mx-auto flex items-center justify-center gap-4 text-center">
-          <span class="text-2xl hidden md:inline">⚠️</span>
           <p class="text-xl font-black uppercase tracking-wide">{{ annonceData.title }}</p>
-          <span class="text-2xl hidden md:inline">⚠️</span>
         </div>
       </div>
     </Transition>

@@ -41,6 +41,11 @@
             Qui sommes-nous ?
         </NuxtLink>
         <NuxtLink 
+            to="/#quisommesnous" 
+            class="hover:text-emerald-600 transition-colors cursor-pointer nav-link">
+            Notre equipe
+        </NuxtLink>
+        <NuxtLink 
             to="/blog" 
             class="hover:text-emerald-600 transition-colors cursor-pointer nav-link">
             Notre blog
