@@ -36,18 +36,55 @@
         </div>
 
         <div class="md:col-span-6 space-y-6">
-          <h4 class="text-xs font-bold uppercase tracking-[0.2em] text-emerald-600 text-center md:text-left">Navigation</h4>
-          <ul class="grid grid-cols-2 md:grid-cols-1 gap-4 text-center md:text-left">
-            <li v-for="link in ['Accueil', 'Services', 'Projets', 'Contact']" :key="link">
-              <NuxtLink :to="link === 'Accueil' ? '/' : '/' + link.toLowerCase()" 
-                class="group flex items-center justify-center md:justify-start gap-3 text-slate-500 hover:text-slate-900 transition-all duration-500">
-                <span class="hidden md:block w-0 h-[2px] bg-emerald-500 transition-all duration-700 group-hover:w-4"></span>
-                <span class="group-hover:translate-x-1 transition-transform duration-700 font-medium text-sm md:text-base">{{ link }}</span>
-              </NuxtLink>
-            </li>
-          </ul>
-        </div>
+        <h4 class="text-xs font-bold uppercase tracking-[0.2em] text-emerald-500 text-center md:text-left">
+          Navigation
+        </h4>
+        
+        <ul class="grid grid-cols-2 md:grid-cols-1 gap-4 text-center md:text-left">
+          <li>
+            <NuxtLink to="/#acceuil" class="group flex items-center justify-center md:justify-start gap-3 text-slate-900 hover:text-white transition-all duration-500">
+              <span class="hidden md:block w-0 h-[2px] bg-emerald-500 transition-all duration-700 group-hover:w-4"></span>
+              <span class="group-hover:translate-x-1 transition-transform duration-700 font-medium text-sm md:text-base text-slate-700">Accueil</span>
+            </NuxtLink>
+          </li>
 
+          <li>
+            <NuxtLink to="/#expertise" class="group flex items-center justify-center md:justify-start gap-3 text-slate-400 hover:text-white transition-all duration-500">
+              <span class="hidden md:block w-0 h-[2px] bg-emerald-500 transition-all duration-700 group-hover:w-4"></span>
+              <span class="group-hover:translate-x-1 transition-transform duration-700 font-medium text-sm md:text-base text-slate-700">Expertise</span>
+            </NuxtLink>
+          </li>
+          
+
+          <li>
+            <NuxtLink to="/#quisommesnous" class="group flex items-center justify-center md:justify-start gap-3 text-slate-400 hover:text-white transition-all duration-500">
+              <span class="hidden md:block w-0 h-[2px] bg-emerald-500 transition-all duration-700 group-hover:w-4"></span>
+              <span class="group-hover:translate-x-1 transition-transform duration-700 font-medium text-sm md:text-base text-slate-700">Qui sommes-nous</span>
+            </NuxtLink>
+          </li>
+
+          <li>
+            <NuxtLink to="/#notre-equipe" class="group flex items-center justify-center md:justify-start gap-3 text-slate-400 hover:text-white transition-all duration-500">
+              <span class="hidden md:block w-0 h-[2px] bg-emerald-500 transition-all duration-700 group-hover:w-4"></span>
+              <span class="group-hover:translate-x-1 transition-transform duration-700 font-medium text-sm md:text-base text-slate-700">Notre equipe</span>
+            </NuxtLink>
+          </li>
+
+          <li>
+            <NuxtLink to="/blog" class="group flex items-center justify-center md:justify-start gap-3 text-slate-400 hover:text-white transition-all duration-500">
+              <span class="hidden md:block w-0 h-[2px] bg-emerald-500 transition-all duration-700 group-hover:w-4"></span>
+              <span class="group-hover:translate-x-1 transition-transform duration-700 font-medium text-sm md:text-base text-slate-700">Notre Blog</span>
+            </NuxtLink>
+          </li>
+
+          <li>
+            <NuxtLink to="/#contact" class="group flex items-center justify-center md:justify-start gap-3 text-slate-400 hover:text-white transition-all duration-500">
+              <span class="hidden md:block w-0 h-[2px] bg-emerald-500 transition-all duration-700 group-hover:w-4"></span>
+              <span class="group-hover:translate-x-1 transition-transform duration-700 font-medium text-sm md:text-base text-slate-700">Contact</span>
+            </NuxtLink>
+          </li>
+        </ul>
+      </div>
       </div>
 
       <div class="mt-12 md:mt-16 pt-8 border-t border-slate-200/50 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-400 text-[11px] md:text-xs">

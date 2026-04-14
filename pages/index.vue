@@ -46,13 +46,13 @@ const isVisible = computed(() => {
 
   <div>
     <Transition name="fade">
-      <div v-if="isVisible" class="bg-red-600 text-white py-6 px-4 shadow-xl relative z-40">
+      <div v-if="isVisible" :class="annonceData.bgColor || 'bg-red-600'" class="text-white py-6 px-4 shadow-xl relative z-40">
         <div class="max-w-6xl mx-auto flex items-center justify-center gap-4 text-center">
           <p class="text-xl font-black uppercase tracking-wide">{{ annonceData.title }}</p>
         </div>
       </div>
     </Transition>
-    </div>
+  </div>
 
   <ImageBG id="acceuil"/>
 
@@ -99,8 +99,8 @@ const isVisible = computed(() => {
       </div>
     </section>
 
-    <section id="notre-clinique" class="py-24 bg-white overflow-hidden">
-      <div class="max-w-7xl mx-auto px-6">
+    <section id="quisommesnous" class="py-24 bg-white overflow-hidden">
+      <div class="mx-auto px-6">
         <div class="flex flex-col lg:flex-row items-center gap-16">
           
           <div class="flex-1 relative">
@@ -155,7 +155,7 @@ const isVisible = computed(() => {
       </div>
     </section>
 
-    <NotreEquipe/>
+    <NotreEquipe id="notre-equipe"/>
 
     <FormContact id="contact" />
 

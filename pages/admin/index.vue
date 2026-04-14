@@ -3,11 +3,7 @@
 definePageMeta({
   layout: 'admin'
 })
-
-
-// 1. On ajoute "storage" aux imports de la lib
 import { auth, db, storage } from '~/lib/firebase'
-// 2. On importe les outils nécessaires depuis le SDK Firebase Storage
 import { ref as storageRef, uploadBytes, getDownloadURL } from 'firebase/storage'
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
 import { signOut } from 'firebase/auth'
@@ -26,13 +22,29 @@ onMounted(() => {
   auth.onAuthStateChanged((currentUser) => {
     if (!currentUser) {
       navigateTo('/admin/login')
-    } else {
-      user.value = currentUser
+      return
     }
+
+    // --- LOGIQUE DE DÉCONNEXION AUTO APRÈS 1H ---
+    const loginTime = localStorage.getItem('admin_login_time')
+    const oneHour = 60 * 60 * 1000 // 3600000 ms
+
+    if (loginTime) {
+      const currentTime = Date.now()
+      const timeElapsed = currentTime - parseInt(loginTime)
+
+      if (timeElapsed > oneHour) {
+        alert("Votre session a expiré (1h max).")
+        handleLogout()
+        return
+      }
+    }
+    // --------------------------------------------
+
+    user.value = currentUser
   })
 })
 
-// 3. FONCTION MANQUANTE : Récupérer le fichier quand on le choisit
 const handleFileChange = (e) => {
   imageFile.value = e.target.files[0]
 }
