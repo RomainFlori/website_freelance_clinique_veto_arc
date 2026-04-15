@@ -7,7 +7,7 @@
       <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
         <div class="flex">
           <a href="\">
-            <NuxtImg class="block h-full w-full object-cover" src="/logo.png" sizes="90px" format="webp" />
+            <NuxtImg class="block h-24 w-full object-cover" src="/logo.png" format="webp" />
           </a>
           <!-- <div class="font-bold text-emerald-600 text-xl">Clinique vétérinaire de l'arc</div> -->
 

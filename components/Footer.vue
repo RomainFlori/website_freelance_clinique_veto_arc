@@ -10,7 +10,7 @@
           <div class="flex items-center justify-center md:justify-start gap-3">
               <div class="flex">
                 <a href="#">
-                  <NuxtImg class="block h-full w-full object-cover" src="/logo.png" sizes="lg:150px" format="webp" />
+                  <NuxtImg class="block h-24 w-full object-cover" src="/logo.png" format="webp" />
                 </a>
                 <!-- <div class="font-bold text-emerald-600 text-xl">Clinique vétérinaire de l'arc</div> -->
 
