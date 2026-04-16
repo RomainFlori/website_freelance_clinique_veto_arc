@@ -30,10 +30,8 @@ const isVisible = computed(() => {
   const start = annonceData.value.startDate
   const end = annonceData.value.endDate
 
-  // Si aucune date n'est saisie, on considère qu'elle est toujours visible si active
   if (!start && !end) return true
 
-  // Vérification de la période
   const afterStart = start ? today >= start : true
   const beforeEnd = end ? today <= end : true
 
@@ -104,7 +102,7 @@ const isVisible = computed(() => {
         <div class="flex flex-col lg:flex-row items-center gap-16">
           
           <div class="flex-1 relative">
-            <div class="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
+            <div class="relative z-10 rounded-[3rem] overflow-hidden rotate-2 hover:rotate-0 transition-transform duration-500">
               <img 
                 src="/public/facade.jpg" 
                 alt="Clinique Vétérinaire de l'Arc" 
@@ -180,44 +178,6 @@ const isVisible = computed(() => {
   
     </section>
   </div>
-
-
-  <!-- <section class="relative -mt-16 z-20 pb-20 px-4 md:px-10 overflow-hidden group">
-    
-    <div class="container mx-auto">
-      <div class="grid md:grid-cols-12 items-center gap-12">
-        
-        <div class="md:col-span-8 relative">
-          <div class="absolute -inset-10 bg-emerald-500/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
-
-          <div class="relative aspect-[16/10] overflow-hidden rounded-[2.5rem] md:rounded-[3.5rem] shadow-2xl border-4 border-white transition-all duration-1000 group-hover:shadow-emerald-500/10 group-hover:scale-[1.01]">
-            
-            <img 
-              src="/public/facade.jpg" 
-              alt="Façade moderne de la clinique"
-              class="w-full h-full object-cover transition-transform duration-[1500ms] ease-out group-hover:scale-105"
-            />
-
-            <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/40 to-transparent"></div>
-          </div>
-        </div>
-
-        <div class="md:col-span-4 space-y-3 opacity-80 group-hover:opacity-100 transition-opacity duration-700">
-          <div class="flex items-center gap-2">
-            <span class="w-1 h-1 bg-emerald-500 rounded-full animate-pulse"></span>
-            <span class="text-xs font-bold uppercase tracking-widest text-emerald-600">
-              Notre facade
-            </span>
-          </div>
-          <p class="text-slate-500 text-sm leading-relaxed font-medium">
-            Parking gratuit devant la clinique.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section> -->
-  
 
 
 </template>

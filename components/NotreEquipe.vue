@@ -26,7 +26,6 @@
             <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
             
             <div class="absolute bottom-6 left-6 right-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700 z-10">
-              <p class="text-white/80 text-xs uppercase tracking-widest font-bold mb-1">Biographie</p>
               <p class="text-white text-sm font-medium leading-snug">{{ member.bio }}</p>
             </div>
           </div>
@@ -53,13 +52,13 @@
     { 
         name: "Dr. Myriam Cantrelle", 
         role: "Vétérinaire", 
-        image: "https://images.unsplash.com/photo-1559839734-2b71f153678f?q=80&w=400&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop",
         bio: "Diplomée de l'école nationale vétérinaire de Nantes."
     },
     { 
         name: "Dr. Lucie Fischer", 
         role: "Vétérinaire", 
-        image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=400&auto=format&fit=crop",
+        image: "/team/lucie.jpg",
         bio: "Diplomée de l'école nationale vétérinaire de Lyon."
     },
     { 
@@ -71,7 +70,7 @@
     { 
         name: "Emilie", 
         role: "ASV", 
-        image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop",
+        image: "/team/asv1.jpg",
         bio: "Assistante vétérinaire."
     }
     ]

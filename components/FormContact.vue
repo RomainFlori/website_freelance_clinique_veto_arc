@@ -27,7 +27,7 @@
           </p> -->
         </div>
 
-        <div class="bg-white/40 backdrop-blur-lg border border-white/20 rounded-3xl shadow-xl p-8 space-y-8 transition-all duration-1000 hover:shadow-emerald-500/5 group/card">
+        <div class="bg-white/40 backdrop-blur-lg border border-white/20 rounded-3xl shadow-xl p-6 space-y-8 transition-all duration-1000 hover:shadow-emerald-500/5 group/card">
           
           <div class="flex items-start gap-5 group/item">
             <div class="p-3 bg-emerald-500/10 rounded-xl text-emerald-600 transition-all duration-700 group-hover/item:bg-emerald-500 group-hover/item:text-white group-hover/item:scale-110">
@@ -74,7 +74,7 @@
               <div class="space-y-3 mt-2">
                 <div class="flex justify-between items-start text-sm">
                   <span class="text-slate-800 font-semibold leading-tight">Lundi, Mardi</span>
-                  <div class="flex flex-col items-end gap-1">
+                  <div class="flex flex-col items-end gap-1 whitespace-nowrap">
                     <span class="px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full font-bold text-[11px]">08:30 — 12:00</span>
                     <span class="px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full font-bold text-[11px]">15:00 — 19:00</span>
                   </div>
@@ -90,7 +90,7 @@
 
                 <div class="flex justify-between items-start text-sm pt-1 border-t border-slate-100">
                   <span class="text-slate-800 font-semibold leading-tight">Jeudi, Vendredi</span>
-                  <div class="flex flex-col items-end gap-1">
+                  <div class="flex flex-col items-end gap-1 whitespace-nowrap">
                     <span class="px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full font-bold text-[11px]">08:30 — 12:00</span>
                     <span class="px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full font-bold text-[11px]">15:00 — 19:00</span>
                   </div>

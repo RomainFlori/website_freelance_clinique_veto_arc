@@ -1,7 +1,7 @@
 <template>
   <div class="relative w-full min-h-[60vh] md:min-h-[80vh] flex items-center overflow-hidden shadow-2xl group">
     
-    <div class="container mx-auto px-6 md:px-12 lg:px-20 z-20 relative">
+    <div class="container mx-auto px-6 md:px-12 lg:px-20 z-20 relative py-16">
       <div class="grid md:grid-cols-12 gap-8 items-center">
         <div class="md:col-span-7 space-y-6 lg:space-y-8 p-8 md:p-12 
                     bg-black/20 backdrop-blur-sm rounded-3xl 

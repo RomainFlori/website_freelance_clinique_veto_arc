@@ -24,6 +24,9 @@ export default defineNuxtConfig({
           { name: 'viewport', content: 'width=device-width, initial-scale=1' },
           { name: 'description', content: 'Soins vétérinaires de proximité à Pourrières. Urgences, chirurgie et plateau technique moderne pour vos animaux.' },
           { name: 'keywords', content: 'vétérinaire Pourrières, clinique vétérinaire Var, soins animaux, urgence vétérinaire' }
+        ],
+        link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
         ]
       }
   }
