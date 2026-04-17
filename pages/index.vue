@@ -1,6 +1,41 @@
 <script setup>
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "VeterinaryCare",
+        "name": "Clinique Vétérinaire de l'Arc",
+        "image": "https://www.clinique-veterinaire-de-larc.fr/logo.png", // Optionnel mais conseillé
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "561 Rte de Trets",
+          "addressLocality": "Pourrières",
+          "postalCode": "83910",
+          "addressCountry": "FR"
+        },
+        "telephone": "+33494784606",
+        "url": "https://www.clinique-veterinaire-de-larc.fr",
+        "openingHours": [
+          "Mo-Tu 08:30-12:00 15:00-19:00",
+          "We 08:30-12:00 15:00-18:00",
+          "Th-Fr 08:30-12:00 15:00-19:00",
+          "Sa 08:30-12:00"
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "43.5049", // Optionnel : aide Google Maps
+          "longitude": "5.7336"
+        }
+      })
+    }
+  ]
+})
+
 import { db } from '~/lib/firebase'
 import { doc, onSnapshot } from 'firebase/firestore'
+
 
   const services = [
     { title: "Médecine générale", description: "Consultations de prévention, vaccinations et suivis de santé réguliers." },
@@ -177,6 +212,9 @@ const isVisible = computed(() => {
       </div>
   
     </section>
+
+    <ReviewsCarousel/>
+    
   </div>
 
 
