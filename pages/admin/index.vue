@@ -108,30 +108,29 @@ const handleLogout = async () => {
 </script>
 
 <template>
-  <div v-if="user" class="min-h-screen bg-slate-50 flex">
-
-    <main class="flex-1 p-6 md:p-12">
+  <div v-if="user" class="min-h-screen bg-slate-50">
+    <main class="max-w-7xl mx-auto p-6 md:p-12">
+      
       <header class="flex justify-between items-center mb-10">
-        <h1 class="text-3xl font-bold text-slate-800">Rédiger un article</h1>
+        <h1 class="text-3xl font-black text-slate-800 tracking-tight">Rédiger un article</h1>
       </header>
 
-      <div class="max-w-3xl bg-white p-8 rounded-[2rem] shadow-sm border border-slate-200">
-        <div class="space-y-6">
+      <div class="grid lg:grid-cols-2 gap-8 items-start">
+        
+        <div class="bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-200 space-y-6">
           <div>
             <label class="block text-sm font-bold text-slate-700 mb-2 pl-1">Titre de l'article</label>
             <input 
               v-model="title"
               type="text" 
-              placeholder="Ex: Les chatons c'est trop mignion hihi..."
+              placeholder="Ex: Conseils pour l'été..."
               class="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-emerald-500 outline-none transition-all"
             />
           </div>
 
           <div>
-              <label class="block text-sm font-bold text-slate-700 mb-2 pl-1">Contenu de l'article</label>
-            <div>
+            <label class="block text-sm font-bold text-slate-700 mb-2 pl-1">Contenu de l'article</label>
             <TiptapEditor v-model="content" />
-          </div>
           </div>
 
           <div>
@@ -140,22 +139,33 @@ const handleLogout = async () => {
               type="file" 
               accept="image/*"
               @change="handleFileChange"
-              class="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl outline-none"
+              class="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl outline-none text-sm file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-bold file:bg-emerald-50 file:text-emerald-700 hover:file:bg-emerald-100"
             />
           </div>
 
-          <p v-if="statusMsg" :class="statusMsg.includes('✅') ? 'text-emerald-600' : 'text-red-500'" class="font-medium pl-1">
+          <p v-if="statusMsg" :class="statusMsg.includes('✅') ? 'text-emerald-600' : 'text-red-500'" class="font-bold text-sm pl-1">
             {{ statusMsg }}
           </p>
 
           <button 
             @click="publishArticle"
             :disabled="isLoading"
-            class="px-10 py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-2xl font-bold shadow-lg shadow-emerald-600/20 transition-all active:scale-95 disabled:opacity-50"
+            class="w-full py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-2xl font-bold shadow-lg shadow-emerald-600/20 transition-all active:scale-95 disabled:opacity-50"
           >
-            {{ isLoading ? 'Publication...' : 'Publier maintenant' }}
+            {{ isLoading ? 'Publication...' : '🚀 Publier maintenant' }}
           </button>
         </div>
+
+        <div class="sticky top-8 space-y-4">
+          <label class="text-xs font-black text-slate-400 uppercase tracking-widest pl-1">Aperçu final sur le site</label>
+          <div class="bg-white p-10 rounded-[2.5rem] shadow-sm border border-slate-200 min-h-[600px] overflow-hidden">
+            <h2 class="text-4xl font-black text-slate-900 mb-8 leading-tight">
+              {{ title || 'Titre de l\'article...' }}
+            </h2>
+            <div class="prose prose-emerald max-w-none text-slate-600" v-html="content || '<p class=\'text-slate-300 italic\'>Le contenu apparaîtra ici...</p>'"></div>
+          </div>
+        </div>
+
       </div>
     </main>
   </div>

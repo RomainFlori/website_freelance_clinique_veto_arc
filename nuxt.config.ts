@@ -26,10 +26,10 @@ export default defineNuxtConfig({
           { name: 'description', content: 'Soins vétérinaires de proximité à Pourrières. Urgences, chirurgie et plateau technique moderne pour vos animaux.' },
           { name: 'keywords', content: 'vétérinaire Pourrières, clinique vétérinaire Var, soins animaux, urgence vétérinaire' },
           { property: 'og:title', content: "Clinique Vétérinaire de l'Arc | Vétérinaire à Pourrières" },
-        { property: 'og:description', content: 'Urgences et soins vétérinaires à Pourrières.' },
-        { property: 'og:type', content: 'website' },
-        { property: 'og:url', content: 'https://www.clinique-veterinaire-de-larc.fr' },
-        { property: 'og:image', content: 'https://www.clinique-veterinaire-de-larc.fr/og-image.jpg' }, // Crée une belle image de 1200x630px
+          { property: 'og:description', content: 'Urgences et soins vétérinaires à Pourrières.' },
+          { property: 'og:type', content: 'website' },
+          { property: 'og:url', content: 'https://www.clinique-veterinaire-de-larc.fr' },
+          { property: 'og:image', content: 'https://www.clinique-veterinaire-de-larc.fr/og-image.jpg' },
         ],
         link: [
           { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },

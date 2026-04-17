@@ -10,13 +10,14 @@ const route = useRoute()
 const articleId = route.params.id
 
 const title = ref('')
-const content = ref('')
+const content = ref('') // Contiendra le HTML de Tiptap
 const currentImageUrl = ref('')
 const imageFile = ref(null)
 const isLoading = ref(false)
+const isFetching = ref(true) // Pour attendre le chargement initial
 const statusMsg = ref('')
 
-// 1. Charger les données de l'article au démarrage
+// 1. Charger l'article
 onMounted(async () => {
   try {
     const docRef = doc(db, "articles", articleId)
@@ -25,13 +26,15 @@ onMounted(async () => {
     if (docSnap.exists()) {
       const data = docSnap.data()
       title.value = data.title
-      content.value = data.content
+      content.value = data.content // Le HTML est injecté ici
       currentImageUrl.value = data.imageUrl
     } else {
       statusMsg.value = "❌ Article introuvable."
     }
   } catch (e) {
     console.error(e)
+  } finally {
+    isFetching.value = false
   }
 })
 
@@ -39,23 +42,26 @@ const handleFileChange = (e) => {
   imageFile.value = e.target.files[0]
 }
 
-// 2. Fonction de mise à jour
+// 2. Mise à jour
 const updateArticle = async () => {
+  if (!title.value || !content.value) {
+    statusMsg.value = "⚠️ Le titre et le contenu ne peuvent pas être vides."
+    return
+  }
+
   isLoading.value = true
-  statusMsg.value = "⏳ Mise à jour en cours..."
+  statusMsg.value = "⏳ Mise à jour..."
 
   try {
     let finalImageUrl = currentImageUrl.value
 
-    // Si une nouvelle image est sélectionnée
     if (imageFile.value) {
-      // Optionnel : supprimer l'ancienne image du storage si elle existe
+      // Nettoyage ancienne image
       if (currentImageUrl.value) {
         const oldImageRef = storageRef(storage, currentImageUrl.value)
         await deleteObject(oldImageRef).catch(() => {})
       }
 
-      // Compresser et uploader la nouvelle
       const options = { maxSizeMB: 0.8, maxWidthOrHeight: 1200, useWebWorker: true }
       const compressedFile = await imageCompression(imageFile.value, options)
       
@@ -65,16 +71,15 @@ const updateArticle = async () => {
       finalImageUrl = await getDownloadURL(fileRef)
     }
 
-    // Mise à jour Firestore
     const docRef = doc(db, "articles", articleId)
     await updateDoc(docRef, {
       title: title.value,
-      content: content.value,
+      content: content.value, // Sauvegarde du HTML stylisé
       imageUrl: finalImageUrl,
       updatedAt: serverTimestamp()
     })
 
-    statusMsg.value = "✅ Article mis à jour avec succès !"
+    statusMsg.value = "✅ Mis à jour !"
     setTimeout(() => navigateTo('/admin/articles'), 1500)
   } catch (e) {
     statusMsg.value = "❌ Erreur : " + e.message
@@ -85,7 +90,7 @@ const updateArticle = async () => {
 </script>
 
 <template>
-  <div class="max-w-3xl">
+  <div class="max-w-6xl mx-auto pb-20">
     <div class="flex items-center gap-4 mb-8">
       <NuxtLink to="/admin/articles" class="p-3 bg-white rounded-2xl border border-slate-200 hover:bg-slate-50 transition-all">
         ⬅️
@@ -93,35 +98,48 @@ const updateArticle = async () => {
       <h1 class="text-3xl font-black text-slate-800">Modifier l'article</h1>
     </div>
 
-    <div class="bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-200 space-y-6">
-      <div>
-        <label class="block text-sm font-bold text-slate-700 mb-2 pl-1">Titre</label>
-        <input v-model="title" type="text" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-emerald-500" />
-      </div>
-
-      <div>
-        <label class="block text-sm font-bold text-slate-700 mb-2 pl-1">Contenu</label>
-        <textarea v-model="content" rows="10" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-emerald-500"></textarea>
-      </div>
-
-      <div>
-        <label class="block text-sm font-bold text-slate-700 mb-2 pl-1">Image actuelle</label>
-        <div class="relative w-40 h-40 mb-4">
-          <img :src="currentImageUrl" class="w-full h-full object-cover rounded-2xl border border-slate-200" />
+    <div v-if="!isFetching" class="grid lg:grid-cols-2 gap-8">
+      
+      <div class="space-y-6 bg-white p-8 rounded-[2.5rem] border border-slate-200 shadow-sm">
+        <div>
+          <label class="block text-sm font-bold text-slate-700 mb-2 pl-1">Titre</label>
+          <input v-model="title" type="text" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-emerald-500" />
         </div>
-        <label class="block text-sm font-bold text-slate-700 mb-2 pl-1">Remplacer l'image (optionnel)</label>
-        <input type="file" @change="handleFileChange" accept="image/*" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl" />
-      </div>
 
-      <p v-if="statusMsg" :class="statusMsg.includes('✅') ? 'text-emerald-600' : 'text-red-500'" class="font-bold">
-        {{ statusMsg }}
-      </p>
+        <div>
+          <label class="block text-sm font-bold text-slate-700 mb-2 pl-1">Contenu (Éditeur stylisé)</label>
+          <TiptapEditor v-model="content" />
+        </div>
 
-      <div class="flex gap-4">
-        <button @click="updateArticle" :disabled="isLoading" class="flex-1 py-4 bg-emerald-600 text-white rounded-2xl font-bold shadow-lg hover:bg-emerald-700 transition-all disabled:opacity-50">
+        <div>
+          <label class="block text-sm font-bold text-slate-700 mb-2 pl-1">Image</label>
+          <div class="flex items-center gap-4 mb-4">
+            <img :src="currentImageUrl" class="w-20 h-20 object-cover rounded-xl border border-slate-100" />
+            <input type="file" @change="handleFileChange" accept="image/*" class="text-xs" />
+          </div>
+        </div>
+
+        <button @click="updateArticle" :disabled="isLoading" class="w-full py-4 bg-emerald-600 text-white rounded-2xl font-bold hover:bg-emerald-700 transition-all">
           {{ isLoading ? 'Enregistrement...' : 'Enregistrer les modifications' }}
         </button>
+
+        <p v-if="statusMsg" :class="statusMsg.includes('✅') ? 'text-emerald-600' : 'text-red-500'" class="text-center font-bold">
+          {{ statusMsg }}
+        </p>
       </div>
+
+      <div class="sticky top-10">
+        <label class="block text-xs font-black text-slate-400 uppercase tracking-widest mb-4 pl-1">Rendu sur le site</label>
+        <div class="bg-white p-10 rounded-[2.5rem] border border-slate-200 shadow-sm min-h-[500px]">
+          <h2 class="text-4xl font-black text-slate-900 mb-6 leading-tight">{{ title }}</h2>
+          <div class="prose prose-emerald max-w-none text-slate-600" v-html="content"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div v-else class="text-center py-20">
+      <p class="text-slate-400 animate-pulse font-bold">Chargement de l'article...</p>
     </div>
   </div>
 </template>

@@ -80,7 +80,7 @@ Le site est configuré pour un déploiement automatisé via **Vercel** et lié a
 - Les **Environment Variables** (clés Firebase) sont configurées dans le dashboard Vercel pour les environnements *Production* et *Preview*.
 
 ### 2. Configuration DNS (OVH)
-- **Record A :** Pointe vers l'IP Vercel (`216.198.79.1`).
+- **Record A :** Pointe vers l'IP Vercel.
 - **Record CNAME :** Le sous-domaine `www` pointe vers l'alias Vercel unique du projet.
 - **Record TXT :** Validation de la propriété via Google Search Console.
 
