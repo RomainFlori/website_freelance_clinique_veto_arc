@@ -175,7 +175,7 @@ const isVisible = computed(() => {
 
             <div class="pt-6">
               <NuxtLink 
-                to="/#equipe" 
+                to="/#notre-equipe" 
                 class="inline-flex items-center gap-3 px-8 py-4 bg-slate-900 text-white rounded-2xl font-bold hover:bg-emerald-600 transition-all hover:shadow-xl hover:shadow-emerald-200 active:scale-95"
               >
                 Découvrez notre equipe

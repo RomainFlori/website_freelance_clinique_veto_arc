@@ -45,7 +45,14 @@ Ce projet est la propriété exclusive de la **Clinique Vétérinaire de l'Arc**
 
 ---
 
-## 📄 Quelques images 
+## Quelques images 
 ![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
 
+Blog :
+![alt text](image-3.png)
+### Backoffice
+![alt text](image-4.png)
+![alt text](image-5.png)
 *Développé avec ❤️ pour nos amis les bêtes.*
