@@ -52,7 +52,7 @@
     { 
         name: "Dr. Myriam Cantrelle", 
         role: "Vétérinaire", 
-        image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop",
+        image: "/team/myriam_c.jpg",
         bio: "Diplomée de l'école nationale vétérinaire de Nantes."
     },
     { 
