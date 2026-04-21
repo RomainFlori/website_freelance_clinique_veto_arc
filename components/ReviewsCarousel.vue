@@ -9,10 +9,10 @@
           La confiance des propriétaires
         </h2>
         <div class="flex items-center justify-center gap-2 mt-4">
-          <div class="flex text-yellow-400">
+          <!-- <div class="flex text-yellow-400">
             <span v-for="n in 5" :key="n">★</span>
-          </div>
-          <span class="font-bold text-slate-700">5.0/5</span>
+          </div> -->
+          <!-- <span class="font-bold text-slate-700">5.0/5</span> -->
           <span class="text-slate-400 text-sm">sur Google Maps</span>
         </div>
       </div>

@@ -23,8 +23,8 @@ export default defineNuxtConfig({
         meta: [
           { charset: 'utf-8' },
           { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-          { name: 'description', content: 'Soins vétérinaires de proximité à Pourrières. Urgences, chirurgie et plateau technique moderne pour vos animaux.' },
-          { name: 'keywords', content: 'vétérinaire Pourrières, clinique vétérinaire Var, soins animaux, urgence vétérinaire' },
+          { name: 'description', content: 'Vétérinaires à Pourrières. Urgences, Soins, Consultation...' },
+          { name: 'keywords', content: 'Clinique de l\'Arc, Clinique Vétérinaire de l\'Arc, Vétérinaire Pourrières, Clinique vétérinaire Saint Maximin la Sainte Baume, Véto dans le Var' },
           { property: 'og:title', content: "Clinique Vétérinaire de l'Arc | Vétérinaire à Pourrières" },
           { property: 'og:description', content: 'Urgences et soins vétérinaires à Pourrières.' },
           { property: 'og:type', content: 'website' },
