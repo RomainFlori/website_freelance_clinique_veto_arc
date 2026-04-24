@@ -46,13 +46,16 @@ Ce projet est la propriété exclusive de la **Clinique Vétérinaire de l'Arc**
 ---
 
 ## Quelques images 
-![alt text](image.png)
-![alt text](image-1.png)
-![alt text](image-2.png)
+<img width="1745" height="1151" alt="image" src="https://github.com/user-attachments/assets/b65f95a1-3205-4935-acc0-1503800de41d" />
+<img width="1745" height="1190" alt="image" src="https://github.com/user-attachments/assets/4fb35146-6985-4e8a-a05e-fa7db10a07fd" />
+<img width="1745" height="1281" alt="image" src="https://github.com/user-attachments/assets/ad911827-fe81-459b-8f52-319e6f07852f" />
+<img width="1745" height="1078" alt="image" src="https://github.com/user-attachments/assets/c73765cf-aa80-45a6-816c-7ffedc834ef8" />
 
 Blog :
-![alt text](image-3.png)
+<img width="1721" height="825" alt="image" src="https://github.com/user-attachments/assets/b67ae29b-d3ca-4d16-a4b0-3749a0819d2c" />
+
 ### Backoffice
-![alt text](image-4.png)
-![alt text](image-5.png)
+<img width="1753" height="1221" alt="image" src="https://github.com/user-attachments/assets/71a0ca91-4ff4-46a7-adbf-ef1caf4410fc" />
+<img width="1726" height="1274" alt="image" src="https://github.com/user-attachments/assets/16c91591-61c0-40df-a52c-e094bdd231c8" />
+
 *Développé avec ❤️ pour nos amis les bêtes.*
